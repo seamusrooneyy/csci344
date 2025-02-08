@@ -1,0 +1,35 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* create additional rules below:  */
+section{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home{
+    background-color: aquamarine;
+}
+
+#bio{
+    background-color: greenyellow;
+}
+#portfolio{
+    background-color: lightcoral;
+}
+#contact{
+    background-color: red;
+}
