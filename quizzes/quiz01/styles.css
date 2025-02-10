@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+main,
+footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+header {
+    background-color: #013672;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+nav{
+    display: flex;
+    gap: 20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+h1,h2,h3{
+    font-family: "Passion One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+h2{
+    margin-top: 60px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+section{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: solid rgb(173, 173, 173) 1px;
+}
+.card-info{
+    grid-column: 0/span 2;
+    padding: 10px;
+}
+section>img{
+    grid-column: 2/span 1;
+    max-width: 200px    ;
+    padding: 10px;
+}
+
+header img,
+footer img {
+    width: 200px;
+}
+@media (max-width: 800px){
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        display: none;
+    }
+}
