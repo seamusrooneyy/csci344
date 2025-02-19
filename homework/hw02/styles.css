@@ -1,0 +1,230 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body{
+    overscroll-behavior: none;
+    /* I used chatgpt to help me solve the issue of overscolling */
+}
+h1{
+    font-family: 'Comfortaa', sans-serif;
+}
+button{
+    border: none;
+    background-color: rgb(245, 245, 245);
+    height: 30px;
+}
+/* Begin Debugging Code */
+/* header,
+main,
+main section,
+nav,
+.logo {
+    border: solid 2px #CCC;
+    padding: 10px;
+    margin: 10px;
+}
+
+.logo {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+aside,
+body>header,
+main,
+.news-feed {
+    border: solid 4px #000;
+    padding: 10px;
+    margin: 10px;
+    font-family: monospace;
+} */
+
+/* End Debugging Code */
+.top-nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.post{
+    min-height: 300px;
+    border: solid 1px lightgray;
+    margin-bottom: 50px;
+}
+
+.side-panel{
+    position: fixed;
+    top: 80px;
+    left: 61vw;
+    min-height: 90vh;
+    min-width: 36vw;
+    /* border: solid 1px black; */
+    background-color: rgb(245, 245, 245);
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.side-panel header{
+    display: grid;
+    grid-template-columns: 33fr 67fr;
+    margin-bottom: 10px;
+}
+.sugname{
+    font-weight: bold;
+}
+.forU{
+    color: gray;
+}
+
+.suggestion{
+    display: grid;
+    grid-template-columns: 60px auto 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+section .circle{
+    padding-right: 10px;
+}
+ul{
+    padding-left: 5px;
+}
+section li{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+a{
+    color:  rgb(61, 110, 255);
+    text-decoration: none;
+}
+
+
+main{
+    width: 57vw;
+    margin-left: 20px;
+}
+
+@media (max-width: 800px) {
+    .side-panel{
+        display: none;
+    }
+    main{
+        width: auto;
+        margin-left: 2vw;
+        margin-right: 2vw;
+
+    }
+}
+.circle{
+    border-radius: 50%;
+}
+.post img{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.sugg4u{
+    color: gray;
+}
+.stories{
+    min-height: 20px;
+    max-height: 90px;
+    border: solid 1px lightgray;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background-color: rgb(250, 250, 250);
+    display: grid;
+    grid-template-rows: 80fr 20fr;
+}
+.stories ul{
+ padding-left: 0;
+ margin-left:  0;
+ margin-top: 5px;
+}
+.story .circle{
+    padding-left: 10px;
+}
+.story p{
+    padding-top: 0;
+    margin-top: 5px;
+}
+.stories ul li{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.post section{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.username{
+    font-weight: bold;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.iconlist{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.iconlist ul{
+    display: flex;
+    gap: 10px;
+}
+.likes{
+    min-height: 30px;
+    font-weight: bold;
+}
+#username{
+    font-weight: bold;
+    display: flex;
+    display: inline;
+}
+#caption{
+    display: inline;
+    font-weight: normal;
+}
+.caption{
+    margin-bottom: 5px;
+}
+.comment{
+    margin-bottom: 5px;
+}
+.date{
+    color: gray;
+    margin-bottom: 5px;
+}
+.smile, .add, .postComment{
+    display: inline;
+}
+
+.addComment{
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    min-height: 60px;
+    border: solid 1px lightgray;
+}
