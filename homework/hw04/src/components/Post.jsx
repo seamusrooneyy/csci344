@@ -1,43 +1,57 @@
 import React, { useState, useEffect } from "react";
 
-export default function Post({ token }) {
+import Bookmark from "./Bookmark";
+import Like from "./Like";
+
+export default function Post({ token, postData}) {
+    // console.log(postData);
 return(
     <section className="bg-white border mb-10">
     <div className="p-4 flex justify-between">
-        <h3 className="text-lg font-Comfortaa font-bold">lindseychandler</h3>
+        <h3 className="text-lg font-Comfortaa font-bold">{postData.user.username}</h3>
         <button className="icon-button"><i className="fas fa-ellipsis-h"></i></button>
     </div>
-    <img src="https://picsum.photos/300/200?q=2" alt="placeholder image" width="300" height="300"
+    <img src={postData.image_url} alt="placeholder image" width="300" height="300"
         className="w-full bg-cover" />
     <div className="p-4">
         <div className="flex justify-between text-2xl mb-3">
-            <div>
-                <button><i className="far fa-heart"></i></button>
+            <div className="flex gap-2">
+                <Like likeId={postData.current_user_like_id} postId={postData.id} token={token} />
                 <button><i className="far fa-comment"></i></button>
                 <button><i className="far fa-paper-plane"></i></button>
             </div>
             <div>
-                <button><i className="far fa-bookmark"></i></button>
+                <Bookmark bookmarkId={postData.current_user_bookmark_id} postId={postData.id} token={token} />
             </div>
         </div>
-        <p className="font-bold mb-3">30 likes</p>
+        <p className="font-bold mb-3">{postData.likes.length} likes</p>
         <div className="text-sm mb-3">
-            <p>
-                <strong>gibsonjack</strong>
-                Here is a caption about the photo.
-                Text text text text text text text text text
-                text text text text text text text text... <button className="button">more</button>
+            <p className="flex gap-2">
+                <strong>{postData.user.username}</strong>
+                {postData.caption}
+                <button className="button">more</button>
             </p>
         </div>
-        <p className="text-sm mb-3">
-            <strong>lizzie</strong>
+        {/* I used chatGPT to help with displaying the varying number of comments */}
+        {postData.comments && postData.comments.length > 0 && (
+                    <div>
+                        {postData.comments.map((comment, index) => (
+                            <p key={index} className=" flex gap-2 text-sm mb-3">
+                                <strong>{comment.user.username}</strong>
+                                {comment.text}
+                            </p>
+                        ))}
+                    </div>
+                )}
+        {/* <p className="text-sm mb-3">
+            <strong>{postData.alt_text}</strong>
             Here is a comment text text text text text text text text.
         </p>
         <p className="text-sm mb-3">
             <strong>vanek97</strong>
             Here is another comment text text text.
-        </p>
-        <p className="uppercase text-gray-500 text-xs">1 day ago</p>
+        </p> */}
+        <p className="uppercase text-gray-500 text-xs">{postData.display_time}</p>
     </div>
     <div className="flex justify-between items-center p-3">
         <div className="flex items-center gap-3 min-w-[80%]">

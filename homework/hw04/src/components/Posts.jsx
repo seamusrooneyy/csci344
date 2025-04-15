@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getDataFromServer } from "../server-requests";
 import Post from "./Post";
+// fetch data from server, render that data 
 
 export default function Posts({ token }) {
     // when useState is invoked it returns an array with 2 values:
@@ -26,10 +27,10 @@ export default function Posts({ token }) {
 
     console.log("Redraw screen with: ", counter);
     return <div>
-        TODO: output all of the posts: {posts.length}
+        {/* TODO: output all of the posts: {posts.length} */}
         {
             posts.map(post => (
-                <Post token = {token}/>
+                <Post key={post.id} token = {token} postData={post}/>
             )
             )
         }
